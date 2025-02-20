@@ -4,3 +4,4 @@ Cypress learning in Sanbercode 64 Group 9
 1. Azka Avicenna Rasjid - azkasena
 2. Anisa Syafitri - anisasyafitri
 3. Rizki Darmawan - rdarmawan22
+4. Raihan Kemal Arsyad - Eang08
