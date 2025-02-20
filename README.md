@@ -5,3 +5,4 @@ Cypress learning in Sanbercode 64 Group 9
 2. Anisa Syafitri - anisasyafitri
 3. Rizki Darmawan - rdarmawan22
 4. Raihan Kemal Arsyad - Eang08
+5. Rini Meycia Panjaitan - 11420053RiniPanjaitan
