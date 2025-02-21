@@ -56,4 +56,6 @@ describe('verify login functionality', () => {
     cy.get('.base').should('be.visible')
     cy.get('.login-container > .block-new-customer').contains('Create an Account')
   })
+
+  //test commit
 })
