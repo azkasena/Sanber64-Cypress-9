@@ -1,0 +1,22 @@
+{
+  "name": "sanber64-cypress-9",
+  "version": "1.0.0",
+  "description": "Cypress learning in Sanbercode 64 Group 9\r <br /> List Kelompok : \r 1. Azka Avicenna Rasjid - azkasena\r 2. Anisa Syafitri - anisasyafitri\r 3. Rizki Darmawan - rdarmawan22\r 4. Raihan Kemal Arsyad - Eang08\r 5. Rini Meycia Panjaitan - 11420053RiniPanjaitan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azkasena/Sanber64-Cypress-9.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azkasena/Sanber64-Cypress-9/issues"
+  },
+  "homepage": "https://github.com/azkasena/Sanber64-Cypress-9#readme",
+  "devDependencies": {
+    "cypress": "^14.0.3"
+  }
+}
