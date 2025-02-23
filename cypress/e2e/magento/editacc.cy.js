@@ -24,7 +24,7 @@ describe('Verify Edit account ', () => {
     })
 
     it('Success checkbox Change Email', () => {
-
+        cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.url().should('eq', 'https://magento.softwaretestingboard.com/customer/account/edit/')
         cy.get('#change-email').click()
         cy.contains('Change Email').should('be.visible')
@@ -32,15 +32,13 @@ describe('Verify Edit account ', () => {
         cy.contains('Current Password').should('be.visible')
         cy.get('#current-password').should('be.visible')
     })
-    it.only('Success checkbox Change Password', () => {
+    it('Success checkbox Change Password', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.url().should('eq', 'https://magento.softwaretestingboard.com/customer/account/edit/')
         magentoPage.change_pass_checkbox()
     })
     it('Success checkbox Change Password', () => {
-        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
+        cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.url().should('eq', 'https://magento.softwaretestingboard.com/customer/account/edit/')
         cy.get('#change-password').click()
         cy.contains('Current Password').should('be.visible')
@@ -63,9 +61,7 @@ describe('Verify Edit account ', () => {
     it.skip('Success change password', () => { // careful to run, cause change the password account!
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         magentoPage.change_pass_checkbox()
-        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
+        cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.get('#change-email').click()
         cy.get('#current-password').should('be.visible')
         cy.get('#current-password').type('@Sanber2025')
@@ -73,9 +69,7 @@ describe('Verify Edit account ', () => {
         cy.contains('You saved the account information').should('be.visible')
     })
     it.skip('Success change password', () => {
-        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
+        cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.get('#change-password').click()
         cy.contains('Current Password').should('be.visible')
         cy.get('#current-password').type('@Sanber2025')
@@ -97,9 +91,7 @@ describe('Verify Edit account ', () => {
     })
 
     it('Failed wrong email', () => {
-        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
+        cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.get('#change-email').click()
         cy.get('#current-password').should('be.visible')
         cy.get('#email').clear().type('abc')
@@ -129,9 +121,7 @@ describe('Verify Edit account ', () => {
     it('Failed wrong current password in change password', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         magentoPage.change_pass_checkbox()
-        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
+        cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.get('#change-email').click()
         cy.get('#current-password').should('be.visible')
         cy.get('#current-password').type('abc')
@@ -140,9 +130,7 @@ describe('Verify Edit account ', () => {
     })
 
     it('Failed empty current password in change password', () => {
-        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
+        cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.get('#change-password').click()
         cy.contains('Current Password').should('be.visible')
         cy.get('#current-password').should('be.visible')
@@ -151,9 +139,7 @@ describe('Verify Edit account ', () => {
     })
 
     it('Failed wrong current password in change password', () => {
-        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
+        cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.get('#change-password').click()
         cy.contains('Current Password').should('be.visible')
         cy.get('#current-password').type('abc')
@@ -169,9 +155,7 @@ describe('Verify Edit account ', () => {
     it('Failed empty new password in change password', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         magentoPage.change_pass_checkbox()
-        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
+        cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.get('#change-password').click()
         cy.contains('Current Password').should('be.visible')
         cy.get('#current-password').type('@Sanber2025')
@@ -190,9 +174,7 @@ describe('Verify Edit account ', () => {
     })
 
     it('Failed empty confirmation new password in change password', () => {
-        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
+        cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.get('#change-password').click()
         cy.contains('Current Password').should('be.visible')
         cy.get('#current-password').type('@Sanber2025')
@@ -212,9 +194,7 @@ describe('Verify Edit account ', () => {
     })
 
     it("Failed confirmation new password did'nt match with new password in change password", () => {
-        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
+        cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.get('#change-password').click()
         cy.contains('Current Password').should('be.visible')
         cy.get('#current-password').type('@Sanber2025')
@@ -230,9 +210,7 @@ describe('Verify Edit account ', () => {
     it('Failed input new password under 8 characters in change password', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         magentoPage.change_pass_checkbox()
-        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
+        cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.get('#change-password').click()
         cy.contains('Current Password').should('be.visible')
         cy.get('#current-password').type('@Sanber2025')
@@ -246,9 +224,7 @@ describe('Verify Edit account ', () => {
     it('Failed new password without special characters', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         magentoPage.change_pass_checkbox()
-        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
-        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
+        cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.get('#change-password').click()
         cy.contains('Current Password').should('be.visible')
         cy.get('#current-password').type('@Sanber2025')
