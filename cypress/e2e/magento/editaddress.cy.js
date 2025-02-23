@@ -1,11 +1,12 @@
-import magentoPage from "../../support/POM/magento"
-
 describe('Verify Edit Address', () => {
     beforeEach(() => {
         cy.visit('https://magento.softwaretestingboard.com/customer/address/')
     })
     it('Success add new address', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
+        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
         cy.get('.column > .actions-toolbar > div.primary > .action').click()
         cy.contains('Street Address').should('be.visible')
         cy.get('#telephone').type('081')
@@ -20,6 +21,14 @@ describe('Verify Edit Address', () => {
 
     it('Success edit from Additional Address Entries edit button', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
+        cy.get('#form-validate > .actions-toolbar > div.primary > .action').click()
+        cy.contains('You saved the address.').should('be.visible')
+    })
+
+    it('Success edit from Additional Address Entries edit button', () => {
+        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
         cy.get(':nth-child(1) > .actions > .edit > span').click()
         cy.contains('Street Address').should('be.visible')
         cy.get('#telephone').type('081')
@@ -34,6 +43,14 @@ describe('Verify Edit Address', () => {
 
     it('Success delete from Additional Address Entries delete button', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
+        cy.get('#form-validate > .actions-toolbar > div.primary > .action').click()
+        cy.contains('You saved the address.').should('be.visible')
+    })
+
+    it.only('Success delete from Additional Address Entries delete button', () => {
+        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
         cy.get(':nth-child(1) > .actions > .delete > span').click()
         cy.contains('Are you sure you want to delete this address?').should('be.visible')
         cy.get('.action-primary').click()
@@ -42,6 +59,9 @@ describe('Verify Edit Address', () => {
 
     it('Failed empty first name', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
+        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
         cy.get('.column > .actions-toolbar > div.primary > .action').click()
         cy.contains('Street Address').should('be.visible')
         cy.get('#firstname').clear()
@@ -57,6 +77,14 @@ describe('Verify Edit Address', () => {
 
     it('Failed empty last name', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
+        cy.get('#form-validate > .actions-toolbar > div.primary > .action').click()
+        cy.contains('This is a required field.').should('be.visible')
+    })
+
+    it('Failed empty last name', () => {
+        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
         cy.get('.column > .actions-toolbar > div.primary > .action').click()
         cy.contains('Street Address').should('be.visible')
         cy.get('#lastname').clear()
@@ -72,6 +100,14 @@ describe('Verify Edit Address', () => {
 
     it('Failed empty phone number', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
+        cy.get('#form-validate > .actions-toolbar > div.primary > .action').click()
+        cy.contains('This is a required field.').should('be.visible')
+    })
+
+    it('Failed empty phone number', () => {
+        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
         cy.get('.column > .actions-toolbar > div.primary > .action').click()
         cy.contains('Street Address').should('be.visible')
         cy.get('#street_1').type('jalan raya')
@@ -85,6 +121,14 @@ describe('Verify Edit Address', () => {
 
     it('Failed empty street address', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
+        cy.get('#form-validate > .actions-toolbar > div.primary > .action').click()
+        cy.contains('This is a required field.').should('be.visible')
+    })
+
+    it('Failed empty street address', () => {
+        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
         cy.get('.column > .actions-toolbar > div.primary > .action').click()
         cy.contains('Street Address').should('be.visible')
         cy.get('#telephone').type('081')
@@ -98,6 +142,14 @@ describe('Verify Edit Address', () => {
 
     it('Failed empty city', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
+        cy.get('#form-validate > .actions-toolbar > div.primary > .action').click()
+        cy.contains('This is a required field.').should('be.visible')
+    })
+
+    it('Failed empty city', () => {
+        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
         cy.get('.column > .actions-toolbar > div.primary > .action').click()
         cy.contains('Street Address').should('be.visible')
         cy.get('#telephone').type('081')
@@ -111,6 +163,14 @@ describe('Verify Edit Address', () => {
 
     it('Failed empty province', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
+        cy.get('#form-validate > .actions-toolbar > div.primary > .action').click()
+        cy.contains('This is a required field.').should('be.visible')
+    })
+
+    it('Failed empty province', () => {
+        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
         cy.get('.column > .actions-toolbar > div.primary > .action').click()
         cy.contains('Street Address').should('be.visible')
         cy.get('#telephone').type('081')
@@ -118,11 +178,15 @@ describe('Verify Edit Address', () => {
         cy.get('#city').type('medan')
         cy.get('#zip').type('54515')
         magentoPage.saveEdit()
+        cy.get('#form-validate > .actions-toolbar > div.primary > .action').click()
         cy.contains('Please select an option.').should('be.visible')
     })
 
     it('Failed empty zipcode', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
+        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
         cy.get('.column > .actions-toolbar > div.primary > .action').click()
         cy.contains('Street Address').should('be.visible')
         cy.get('#telephone').type('081')
@@ -136,6 +200,14 @@ describe('Verify Edit Address', () => {
 
     it.only('Notification zipcode above 6 numbers', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
+        cy.get('#form-validate > .actions-toolbar > div.primary > .action').click()
+        cy.contains('This is a required field.').should('be.visible')
+    })
+
+    it('Notification zipcode above 6 numbers', () => {
+        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
         cy.get('.column > .actions-toolbar > div.primary > .action').click()
         cy.contains('Street Address').should('be.visible')
         cy.get('#telephone').type('081')
@@ -151,6 +223,14 @@ describe('Verify Edit Address', () => {
 
     it('Default country is United States', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
+        cy.get('#form-validate > .actions-toolbar > div.primary > .action').click()
+        cy.contains('You saved the address.').should('be.visible')
+    })
+
+    it('Default country is United States', () => {
+        cy.get('#email').type('kelompok9_sanber_sqa@gmail.com')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('@Sanber2025')
+        cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
         cy.get('.column > .actions-toolbar > div.primary > .action').click()
         cy.contains('Street Address').should('be.visible')
         cy.get('#telephone').type('081')
@@ -160,6 +240,8 @@ describe('Verify Edit Address', () => {
         cy.get('#zip').type('54515')
         magentoPage.saveEdit()
         magentoPage.saved_address()
+        cy.get('#form-validate > .actions-toolbar > div.primary > .action').click()
+        cy.contains('You saved the address.').should('be.visible')
     })
 
 })
