@@ -1,10 +1,9 @@
-import magentoPage from "../../support/POM/magento"
-
 describe('Verify Edit Address', () => {
     beforeEach(() => {
         cy.visit('https://magento.softwaretestingboard.com/customer/address/')
     })
     it('Success add new address', () => {
+        cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.get('.column > .actions-toolbar > div.primary > .action').click()
         cy.contains('Street Address').should('be.visible')
@@ -41,7 +40,7 @@ describe('Verify Edit Address', () => {
     it('Success delete from Additional Address Entries delete button', () => {
         cy.login('kelompok9_sanber_sqa@gmail.com', '@Sanber2025')
         cy.get('#form-validate > .actions-toolbar > div.primary > .action').click()
-        magentoPage.saved_address()
+        cy.contains('You saved the address.').should('be.visible')
     })
 
     it.only('Success delete from Additional Address Entries delete button', () => {
