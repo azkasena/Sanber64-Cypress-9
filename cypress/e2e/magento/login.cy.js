@@ -53,10 +53,16 @@ describe('verify login functionality', () => {
     loginPage.required_error_invalid_Format()
   })
 
+  function randomPassword(){
+    const randomPassword = Math.random().toString(36).substring(3,10)
+    return randomPassword
+  }
+  let randPassword = randomPassword()
+
   //test login invalid password
   it('login failed invalid password', () => {
     cy.get('.panel > .header > .authorization-link > a').click()
-    cy.login('kelompok9_sanber_sqa@gmail.com','demo1235@')
+    cy.login('kelompok9_sanber_sqa@gmail.com',randPassword)
     loginPage.required_error_invalid()
   })
 
